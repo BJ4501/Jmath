@@ -1,3 +1,5 @@
+package com.bj.others;
+
 public class Huihuan {
 
     /*

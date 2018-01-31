@@ -1,3 +1,5 @@
+package com.bj.others;
+
 import java.util.Scanner;
 
 public class buffonNeddle {

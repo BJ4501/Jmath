@@ -1,3 +1,5 @@
+package com.bj.others;
+
 public class OrderSearch {
 
     /**顺序查找平均时间复杂度O(n)

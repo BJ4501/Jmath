@@ -1,3 +1,5 @@
+package com.bj.others;
+
 public class OrderSearch1 {
     /**
      * 优化顺序查找，避免每次比较后都要判断查找位置是否越界for()，在总数据较多的时候，效率提高很大
