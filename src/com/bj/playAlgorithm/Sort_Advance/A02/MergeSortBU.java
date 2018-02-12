@@ -1,15 +1,14 @@
-package com.bj.playAlgorithm.Sort_Advance.A01;
+package com.bj.playAlgorithm.Sort_Advance.A02;
 
 import com.bj.playAlgorithm.Sort_Basic.A04.SortTestHelper;
-
 
 import java.util.Arrays;
 
 /**
- * 归并排序 O(n*log n)
+ * 自底向上的归并排序 O(n*log n)
  * Created by BJ on 2018/2/12.
  */
-public class MergeSort2 {
+public class MergeSortBU {
 
     //将arr[l...mid]和arr[mid+1...r]两部分进行归并
     private static void merge(Comparable[] arr, int l, int mid, int r){
@@ -46,34 +45,21 @@ public class MergeSort2 {
     }
 
     //递归使用归并排序，对arr[l...r]的范围进行排序
-    private static void sort(Comparable[] arr, int l, int r){
-
-        //代表递归到底，只有一个元素的情况下，是不需要再次拆分
-        /*if (l >= r)
-            return;*/
-
-        if (r - l <= 15){
-            InsertionSort.sort(arr,l,r);
-            return;
-        }
-
-
-        int mid = (l+r)/2;
-        //递归排序
-        sort(arr, l, mid);
-        sort(arr, mid+1, r);
-        //之后进行合并merge操作，核心操作就在merge中
-        //优化1：对于arr[mid] <= arr[mid + 1]的情况，不进行merge
-        //对于近乎有序的数组非常有效，但是对于一般情况，有一定的性能损失
-        if (arr[mid].compareTo(arr[mid+1]) > 0)
-            merge(arr,l,mid,r);
-
-    }
-
-
     public static void sort(Comparable[] arr){
+
+        //MergeSortBottomUp优化
         int n = arr.length;
-        sort(arr,0,n-1);
+
+        for (int sz = 1; sz <= n; sz += sz){
+            for (int i = 0; i + sz < n; i += sz +sz){
+                //对arr[i...i+sz-1],arr[i+sz...i+2*sz-1]进行归并
+                //对于arr[mid] <= arr[mid+1] 的情况，不进行merge
+                if (arr[i+sz-1].compareTo(arr[i+sz]) > 0)
+                    //如果最后一个组不足sz，设置为n-1
+                    merge(arr,i,i+sz-1,Math.min(i+sz+sz-1,n-1));
+
+            }
+        }
     }
 
     // 测试MergeSort
@@ -85,7 +71,7 @@ public class MergeSort2 {
         // 否则，你就见识了O(n^2)的算法和O(nlogn)算法的本质差异：）
         int N = 1000000;
         Integer[] arr = SortTestHelper.generateRandomArray(N, 0, 100000);
-        SortTestHelper.testSort("com.bj.playAlgorithm.Sort_Advance.A01.MergeSort", arr);
+        SortTestHelper.testSort("com.bj.playAlgorithm.Sort_Advance.A02.MergeSortBU", arr);
 
         return;
     }

@@ -59,7 +59,7 @@ public class MergeSort {
         merge(arr,l,mid,r);
     }
 
-    //no use
+
     public static void sort(Comparable[] arr){
         int n = arr.length;
         sort(arr,0,n-1);
