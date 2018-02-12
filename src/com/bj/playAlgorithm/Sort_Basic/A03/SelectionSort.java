@@ -1,7 +1,5 @@
 package com.bj.playAlgorithm.Sort_Basic.A03;
 
-import com.bj.playAlgorithm.Sort_Basic.A02.Student;
-
 /**
  * 选择排序法SelectionSort
  * Created by BJ on 2018/1/31.
