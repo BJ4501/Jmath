@@ -40,7 +40,7 @@ public class SelectionSort {
     public static void main(String[] args) {
 
         //测试排序算法的辅助函数
-        int N = 100000;
+        int N = 1000000;
         Integer[] arr = SortTestHelper.generateRandomArray(N,0,N);
 
         com.bj.playAlgorithm.Sort_Basic.A04.SortTestHelper.testSort("com.bj.playAlgorithm.Sort_Basic.A04.SelectionSort",arr);
