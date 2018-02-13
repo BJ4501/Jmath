@@ -25,6 +25,10 @@ public class RandomQuickSort {
     // 返回p, 使得arr[l...p-1] < arr[p] ; arr[p+1...r] > arr[p]
     private static int partition(Comparable[] arr, int l, int r){
 
+        //优化：随机在arr[l...r]的范围中，选择一个数值作为标定点P
+        //将P放置在最左边，其余不需要改动
+        swap(arr,l,(int)(Math.random()*(r-l+1))+l);
+
         //最左侧的v 作为左右分隔的元素
         Comparable v = arr[l];
 
@@ -76,7 +80,7 @@ public class RandomQuickSort {
         // 可以在1秒之内轻松处理100万数量级的数据
         int N = 1000000;
         Integer[] arr = SortTestHelper.generateRandomArray(N, 0, 100000);
-        SortTestHelper.testSort("com.bj.playAlgorithm.Sort_Advance.A04.RandomQuickSort", arr);
+        SortTestHelper.testSort("com.bj.playAlgorithm.Sort_Advance.A03.RandomQuickSort", arr);
 
         return;
     }
