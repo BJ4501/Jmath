@@ -11,12 +11,14 @@ public class QuickSort2Ways {
     //FIXME 当数组中具有非常多的重复数的情况下，
     // 分隔出的数组两端又变的不平衡了，在这种情况下，效率又退化为了On^2
 
+    private QuickSort2Ways(){}
 
     // 对arr[l...r]部分进行partition操作
     // 返回p, 使得arr[l...p-1] < arr[p] ; arr[p+1...r] > arr[p]
     private static int partition(Comparable[] arr, int l, int r){
 
-        swap(arr,l,(int)(Math.random()*(r-l+1))+l);
+        // 随机在arr[l...r]的范围中, 选择一个数值作为标定点pivot
+        swap( arr, l , (int)(Math.random()*(r-l+1))+l );
 
         //最左侧的v 作为左右分隔的元素
         Comparable v = arr[l];
@@ -26,13 +28,11 @@ public class QuickSort2Ways {
 
         //当i大于j时会跳出循环
         while (true){
-            //arr[i].compareTo(v) < 0,
-            while (i <= r && arr[i].compareTo(v) < 0)
+            while( i <= r && arr[i].compareTo(v) < 0 )
                 i ++;
 
-            while (j >= l+1 && arr[j].compareTo(v) > 0)
+            while( j >= l+1 && arr[j].compareTo(v) > 0 )
                 j --;
-
             //当i大于j时会跳出循环
             if (i > j)
                 break;
@@ -46,7 +46,7 @@ public class QuickSort2Ways {
         }
 
         //最后将处于边界条件中的v，交换回j 的位置，此时两边的数组满足上面的条件
-        swap(arr,i,j);
+        swap(arr,l,j);
 
         return j;
     }
