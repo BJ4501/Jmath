@@ -23,7 +23,7 @@ public class HeapSort2 {
 
     }
 
-    // 测试 HeapSort1 
+    // 测试 HeapSort1
     public static void main(String[] args) {
 
         int N = 1000000;
