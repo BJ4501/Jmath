@@ -1,4 +1,6 @@
-package com.bj.MoocInterview;
+package com.bj.MoocInterview.recursion;
+
+import com.bj.MoocInterview.common.Node;
 
 import java.util.ArrayList;
 import java.util.Arrays;

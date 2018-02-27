@@ -1,4 +1,4 @@
-package com.bj.MoocInterview;
+package com.bj.MoocInterview.common;
 
 /**
  * Created by BJ on 2018/2/26.
