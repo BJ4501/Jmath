@@ -83,9 +83,7 @@ public class DeleteIfList {
 
         CreateLinkedList c = new CreateLinkedList();
         DeleteIfList rll = new DeleteIfList();
-/*
-        Node.printLinkedList(rll.deleteIfList(c.createLinkedList(new ArrayList<>())));
-        Node.printLinkedList(rll.deleteIfList(c.createLinkedList(Arrays.asList(1))));*/
+
         Node.printLinkedList(rll.deleteIfList(c.createLinkedList(Arrays.asList(1,2,3,4,5)),2));
         Node.printLinkedList(rll.deleteIfList(c.createLinkedList(Arrays.asList(1,2,3,2,5)),2));
         Node.printLinkedList(rll.deleteIfList(c.createLinkedList(Arrays.asList(2,2,3,2,5)),2));
