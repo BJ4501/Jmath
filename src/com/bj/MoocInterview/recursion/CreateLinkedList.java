@@ -13,7 +13,7 @@ import java.util.List;
 public class CreateLinkedList {
 
     /**
-     * Create linked list
+     * CreateTreeProblem linked list
      * @param data Data to create the list
      * @return head of the linked list
      */
