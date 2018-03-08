@@ -1,9 +1,5 @@
 package com.bj.playAlgorithm.BinarySearchTree.A02;
 
-import java.util.Hashtable;
-import java.util.Stack;
-import java.util.Vector;
-
 /**
  * 二分搜索树
  * Created by BJ on 2018/3/1.
